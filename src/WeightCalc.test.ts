@@ -3,13 +3,13 @@ import { test, expect } from 'vitest';
 import { getLayout } from "./WeightCalc";
 
 test('number below bar weight returns error', () => {
-  expect(getLayout(0)).toEqual(new Error("Weight too low."))
-  expect(getLayout(44)).toEqual(new Error("Weight too low."))
+  expect(() => getLayout(0)).toThrow(new Error("Weight too low."))
+  expect(() => getLayout(44)).toThrow(new Error("Weight too low."))
 })
 
 test('not divisible by five returns error', () => {
-  expect(getLayout(56)).toEqual(new Error("Weight not divisible by 5."))
-  expect(getLayout(102)).toEqual(new Error("Weight not divisible by 5."))
+  expect(() => getLayout(56)).toThrow(new Error("Weight not divisible by 5."))
+  expect(() => getLayout(102)).toThrow(new Error("Weight not divisible by 5."))
 })
 
 test('bar weight returns []', () => {
