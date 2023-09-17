@@ -1,5 +1,5 @@
 {
-  "name": "interview-demo",
+  "name": "barbell-layouter",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -26,5 +26,6 @@
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vitest": "^0.34.4"
-  }
+  },
+  "license": "MIT"
 }
