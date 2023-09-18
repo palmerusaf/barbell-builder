@@ -37,6 +37,9 @@ devDependencies:
   '@storybook/testing-library':
     specifier: ^0.2.1
     version: 0.2.1
+  '@types/lodash':
+    specifier: ^4.14.198
+    version: 4.14.198
   '@types/react':
     specifier: ^18.2.15
     version: 18.2.21
@@ -67,6 +70,9 @@ devDependencies:
   eslint-plugin-storybook:
     specifier: ^0.6.13
     version: 0.6.13(eslint@8.49.0)(typescript@5.2.2)
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   postcss:
     specifier: ^8.4.29
     version: 8.4.29

@@ -1,3 +1,5 @@
+import { sum } from "lodash";
+
 import { test, expect } from 'vitest';
 
 import { getLayout } from "./WeightCalc";
@@ -40,15 +42,29 @@ test('target weight 185 returns [45, 25]', () => {
 })
 
 test('target weight 165 returns [35, 25]', () => {
-  const target = 45 + ((35 + 25) * 2)
-  expect(getLayout(target)).toEqual([35, 25])
+  const barWeight = 45
+  const targetWeight = barWeight + ((35 + 25) * 2)
+  expect(getLayout(targetWeight)).toEqual([35, 25])
 })
 
 test('target weight 255 returns [45, 45, 10, 5]', () => {
-  const target = 45 + ((45 + 35 + 25) * 2)
-  expect(getLayout(target)).toEqual([45, 35, 25])
+  const barWeight = 45
+  const targetWeight = barWeight + ((45 + 35 + 25) * 2)
+  expect(getLayout(targetWeight)).toEqual([45, 35, 25])
 })
 
 test('target weight 270 returns [45, 45, 10, 10, 2.5]', () => {
   expect(getLayout(270)).toEqual([45, 45, 10, 10, 2.5])
+})
+
+test('target weight in range 45-900 returns layout that sums back to target', () => {
+  let targetWeight = 45
+  const barWeight = 45
+
+  while (targetWeight <= 900) {
+    const sumFromLayout = (sum(getLayout(targetWeight)) * 2) + barWeight
+    expect(sumFromLayout).toEqual(targetWeight)
+    targetWeight += 5
+  }
+
 })

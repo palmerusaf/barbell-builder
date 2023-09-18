@@ -5,7 +5,7 @@ const plateSizes = [45, 35, 25, 10, 5, 2.5];
  * @throws Error if target below bar weight or not divisible by 5
  * @returns An Array that represents the weight layout required for each side of a barbell. This layout should be applied to each side as the array only represents one side.
  */
-export function getLayout(targetWeight: number): number[] | Error {
+export function getLayout(targetWeight: number): number[] {
   if (targetWeight < barWeight) {
     throw new Error("Weight too low.");
   }
