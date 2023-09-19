@@ -26,7 +26,7 @@ function PlateStack(layout: number[], targetWeight: number): JSX.Element {
 function makePlate(weight: number, iKey: number) {
   const plateStyle = getPlateStyles(weight)
   return (
-    <div key={iKey} className={`flex z-10 justify-between px-2 rounded-full ${plateStyle}`}>
+    <div key={iKey} className={`flex z-10 justify-between px-2 animate-in slide-in-from-top fade-in-0 duration-500 rounded-full ${plateStyle}`}>
       <div>
         {weight}
       </div>
