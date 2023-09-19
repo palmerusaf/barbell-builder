@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import * as Layout from "./Layout";
 import { Title } from './Title';
+import { Controls } from './Controls';
 
 const meta = {
   title: 'Layout',
@@ -31,5 +32,13 @@ export const WithTitle: Story = {
     title: Title(),
     display: Layout.Display(),
     controls: Layout.Controls(),
+  },
+};
+
+export const WithControls: Story = {
+  args: {
+    title: Layout.Title(),
+    display: Layout.Display(),
+    controls: Controls({ targetWeight: 45, handleChange: console.log }),
   },
 };

@@ -7,8 +7,8 @@ interface LayoutProps {
 
 export const Layout = ({ title, controls, display }: LayoutProps) => (
   <div className='flex flex-col w-screen h-screen'>
-    <div className='h-1/6'>{title}</div>
-    <div className='h-1/3'>{controls}</div>
+    <div className='flex justify-center items-center h-1/4'>{title}</div>
+    <div className='flex justify-center items-center h-1/6'>{controls}</div>
     <div className='grow'>{display}</div>
   </div>
 );
