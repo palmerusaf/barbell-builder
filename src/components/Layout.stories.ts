@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import * as Layout from "./Layout";
 import { Title } from './Title';
 import { Controls } from './Controls';
+import { Display } from './Display';
 
 const meta = {
   title: 'Layout',
@@ -40,5 +41,21 @@ export const WithControls: Story = {
     title: Layout.Title(),
     display: Layout.Display(),
     controls: Controls({ targetWeight: 45, handleChange: console.log }),
+  },
+};
+
+export const WithDisplayEmpty: Story = {
+  args: {
+    title: Layout.Title(),
+    display: Display({ targetWeight: 45 }),
+    controls: Layout.Controls(),
+  },
+};
+
+export const WithDisplayFull: Story = {
+  args: {
+    title: Layout.Title(),
+    display: Display({ targetWeight: 900 }),
+    controls: Layout.Controls(),
   },
 };
